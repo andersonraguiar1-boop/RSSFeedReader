@@ -1,0 +1,46 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "backend", "backend", "{A6AF4A94-98D2-4519-BC0D-898ED13D7206}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RSSFeedReader.Api", "backend\RSSFeedReader.Api\RSSFeedReader.Api.csproj", "{39F6C8F6-551D-4D20-BBD6-AB53D4D424C8}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "frontend", "frontend", "{7343D9D8-881E-4A92-AC50-B0199EB60064}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RSSFeedReader.UI", "frontend\RSSFeedReader.UI\RSSFeedReader.UI.csproj", "{0061D784-0026-4515-B1A7-41537ECCC651}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{01DD2BE7-62B0-44EB-AFA1-5D0BE8A6BD25}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RSSFeedReader.Api.Tests", "backend\tests\RSSFeedReader.Api.Tests\RSSFeedReader.Api.Tests.csproj", "{A780B5A7-C6FF-4F32-9027-26215C773116}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{39F6C8F6-551D-4D20-BBD6-AB53D4D424C8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{39F6C8F6-551D-4D20-BBD6-AB53D4D424C8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{39F6C8F6-551D-4D20-BBD6-AB53D4D424C8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{39F6C8F6-551D-4D20-BBD6-AB53D4D424C8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0061D784-0026-4515-B1A7-41537ECCC651}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0061D784-0026-4515-B1A7-41537ECCC651}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0061D784-0026-4515-B1A7-41537ECCC651}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0061D784-0026-4515-B1A7-41537ECCC651}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A780B5A7-C6FF-4F32-9027-26215C773116}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A780B5A7-C6FF-4F32-9027-26215C773116}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A780B5A7-C6FF-4F32-9027-26215C773116}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A780B5A7-C6FF-4F32-9027-26215C773116}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{39F6C8F6-551D-4D20-BBD6-AB53D4D424C8} = {A6AF4A94-98D2-4519-BC0D-898ED13D7206}
+		{0061D784-0026-4515-B1A7-41537ECCC651} = {7343D9D8-881E-4A92-AC50-B0199EB60064}
+		{01DD2BE7-62B0-44EB-AFA1-5D0BE8A6BD25} = {A6AF4A94-98D2-4519-BC0D-898ED13D7206}
+		{A780B5A7-C6FF-4F32-9027-26215C773116} = {01DD2BE7-62B0-44EB-AFA1-5D0BE8A6BD25}
+	EndGlobalSection
+EndGlobal

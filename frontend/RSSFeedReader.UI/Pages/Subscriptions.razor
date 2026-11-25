@@ -1,0 +1,76 @@
+@page "/"
+@using RSSFeedReader.UI.Services
+@inject SubscriptionService SubscriptionService
+
+<PageTitle>Subscriptions</PageTitle>
+
+<h1>Subscriptions</h1>
+
+<EditForm Model="@Input" OnValidSubmit="AddSubscription">
+    <DataAnnotationsValidator />
+    <div>
+        <label for="feed-url">Feed URL</label>
+        <InputText id="feed-url" @bind-Value="Input.Url" />
+    </div>
+    <button type="submit">Add subscription</button>
+</EditForm>
+
+@if (!string.IsNullOrWhiteSpace(ErrorMessage))
+{
+    <p role="alert">@ErrorMessage</p>
+}
+
+@if (_subscriptions.Count == 0)
+{
+    <p>No subscriptions yet.</p>
+}
+else
+{
+    <ul>
+        @foreach (var subscription in _subscriptions)
+        {
+            <li>@subscription.Url</li>
+        }
+    </ul>
+}
+
+@code {
+    private SubscriptionInput Input { get; } = new();
+    private List<Subscription> _subscriptions = [];
+    private string? ErrorMessage { get; set; }
+
+    protected override async Task OnInitializedAsync()
+    {
+        await RefreshSubscriptions();
+    }
+
+    private async Task AddSubscription()
+    {
+        ErrorMessage = null;
+        if (string.IsNullOrWhiteSpace(Input.Url))
+        {
+            ErrorMessage = "Enter a feed URL.";
+            return;
+        }
+
+        var added = await SubscriptionService.AddAsync(Input.Url);
+        if (added is null)
+        {
+            ErrorMessage = "Enter a feed URL.";
+            return;
+        }
+
+        Input.Url = "";
+        await RefreshSubscriptions();
+    }
+
+    private async Task RefreshSubscriptions()
+    {
+        _subscriptions = (await SubscriptionService.GetAllAsync()).ToList();
+    }
+
+    private sealed class SubscriptionInput
+    {
+        public string Url { get; set; } = "";
+    }
+}
